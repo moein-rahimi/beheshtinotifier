@@ -8,7 +8,7 @@ $token = "153172554:AAGrcXguYssXQAwsM2M-YIvBL2RJS1fdgrk" ;
 
 $client = new Zelenin\Telegram\Bot\Api($token);
 
-//$site = "https://api.telegram.org/bot".$token;
+
 
 
 
@@ -19,6 +19,14 @@ $messageid 	= $data['message']['message_id'];
 $updateid 	= $data['update_id'];
 $senderid 	= $data['message']['from']['id'];
 $zaman 		= $data['message']['date'];
+
+$keyboard = [
+    ['7', '8', '9'],
+    ['4', '5', '6'],
+    ['1', '2', '3'],
+         ['0']
+];
+$client->sendMessage(array('chat_id' => $chatid, 'text' => 'سلام', 'reply_to_message_id' => $messageid, 'reply_markup' => $keyboard));
   
 
 if ($text == '/tatili' || $text == '/tatili@BeheshtiNotifierBot'){
