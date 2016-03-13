@@ -20,13 +20,9 @@ $updateid 	= $data['update_id'];
 $senderid 	= $data['message']['from']['id'];
 $zaman 		= $data['message']['date'];
 
-$keyboard = [
-    ['7', '8', '9'],
-    ['4', '5', '6'],
-    ['1', '2', '3'],
-         ['0']
-];
-$client->sendMessage(array('chat_id' => $chatid, 'text' => 'سلام', 'reply_to_message_id' => $messageid));
+$keyboard = array('ReplyKeyboardMarkup' => array('keyboard' => array(array("A", "B"))));
+
+$client->sendMessage(array('chat_id' => $chatid, 'text' => 'سلام', 'reply_to_message_id' => $messageid, 'reply_markup' => $keyboard));
   
 
 if ($text == '/tatili' || $text == '/tatili@BeheshtiNotifierBot'){
