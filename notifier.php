@@ -22,8 +22,8 @@ $zaman 		= $data['message']['date'];
 
 $showKeyboard = new Zelenin\Telegram\Bot\Type\ReplyKeyboardMarkup();
 $showKeyboard->keyboard = [
-    ['bash.im', 'ithappens.me'],
-    ['zadolba.li', 'anekdot.ru']
+    ['اخبار', 'تعطیلی کلاس ها'],
+    [ 'کلاس جبرانی']
 ];
 $showKeyboard->one_time_keyboard = false;
 
@@ -34,7 +34,7 @@ $showKeyboard->one_time_keyboard = false;
                             'disable_web_page_preview' => true
                         ]);  
 
-if ($text == '/tatili' || $text == '/tatili@BeheshtiNotifierBot'){
+if ($text == '/tatili' || $text == '/tatili@BeheshtiNotifierBot' || $text == 'تعطیلی کلاس ها' ){
     $params 	= array('chat_id' => $chatid, 'action' => 'typing');
 			$response 	= $client -> sendChatAction($params);
     $news_page =HtmlDomParser::file_get_html( "http://p-karaj.tvu.ac.ir/" );
@@ -52,7 +52,7 @@ if ($text == '/tatili' || $text == '/tatili@BeheshtiNotifierBot'){
 
 
 
-if ($text == '/akhbar' || $text == '/akhbar@BeheshtiNotifierBot'){
+if ($text == '/akhbar' || $text == '/akhbar@BeheshtiNotifierBot' || $text == 'اخبار'){
    $params 	= array('chat_id' => $chatid, 'action' => 'typing');
 			$response 	= $client -> sendChatAction($params);
  $news_page =HtmlDomParser::file_get_html( "http://p-karaj.tvu.ac.ir/" );
@@ -94,7 +94,7 @@ $dom =HtmlDomParser::file_get_html( $url );
 
 
 
-if ($text == '/jobrani' || $text == '/jobrani@BeheshtiNotifierBot'){
+if ($text == '/jobrani' || $text == '/jobrani@BeheshtiNotifierBot' || $text == 'کلاس جبرانی'){
     $params 	= array('chat_id' => $chatid, 'action' => 'typing');
 			$response 	= $client -> sendChatAction($params);
     $news_page =HtmlDomParser::file_get_html( "http://p-karaj.tvu.ac.ir/" );
