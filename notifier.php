@@ -20,10 +20,19 @@ $updateid 	= $data['update_id'];
 $senderid 	= $data['message']['from']['id'];
 $zaman 		= $data['message']['date'];
 
-$keyboard =['s'] ;
+$showKeyboard = new ReplyKeyboardMarkup();
+$showKeyboard->keyboard = [
+    ['bash.im', 'ithappens.me'],
+    ['zadolba.li', 'anekdot.ru']
+];
+$showKeyboard->one_time_keyboard = false;
 
-$client->sendMessage(array('chat_id' => $chatid, 'text' => 'test'),$keyboard);
-  
+                        $response = $client->sendMessage([
+                            'chat_id' => $chatid,
+                            'text' => 'Выберите сайт:',
+                            'reply_markup' => $showKeyboard,
+                            'disable_web_page_preview' => true
+                        ]);  
 
 if ($text == '/tatili' || $text == '/tatili@BeheshtiNotifierBot'){
     $params 	= array('chat_id' => $chatid, 'action' => 'typing');
