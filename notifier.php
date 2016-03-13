@@ -26,7 +26,7 @@ $keyboard = [
     ['1', '2', '3'],
          ['0']
 ];
-$client->sendMessage(array('chat_id' => $chatid, 'text' => 'سلام', 'reply_to_message_id' => $messageid, 'reply_markup' => $keyboard));
+$client->sendMessage(array('chat_id' => $chatid, 'text' => 'سلام', 'reply_to_message_id' => $messageid));
   
 
 if ($text == '/tatili' || $text == '/tatili@BeheshtiNotifierBot'){
