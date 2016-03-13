@@ -20,7 +20,7 @@ $updateid 	= $data['update_id'];
 $senderid 	= $data['message']['from']['id'];
 $zaman 		= $data['message']['date'];
 
-$showKeyboard = new ReplyKeyboardMarkup();
+$showKeyboard = new Zelenin\Telegram\Bot\Type\ReplyKeyboardMarkup();
 $showKeyboard->keyboard = [
     ['bash.im', 'ithappens.me'],
     ['zadolba.li', 'anekdot.ru']
