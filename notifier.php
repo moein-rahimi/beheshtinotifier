@@ -20,7 +20,11 @@ $updateid 	= $data['update_id'];
 $senderid 	= $data['message']['from']['id'];
 $zaman 		= $data['message']['date'];
 
-$keyboard = array('ReplyKeyboardMarkup' => array('keyboard' => array(array("A", "B"))));
+$keyboard = array(
+    'keyboard' => array(
+        array("A", "B")
+    )
+);
 
 $client->sendMessage(array('chat_id' => $chatid, 'text' => 'سلام', 'reply_to_message_id' => $messageid, 'reply_markup' => $keyboard));
   
