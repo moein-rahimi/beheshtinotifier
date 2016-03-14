@@ -38,7 +38,7 @@ $showKeyboard->one_time_keyboard = true;
 switch ($text) {
   case 'تعطیلی کلاس ها'  :
   case '/akhbar' :
-  
+  case '/tatili@BeheshtiNotifierBot' :
 
       $params   = array('chat_id' => $chatid, 'action' => 'typing');
       $response   = $client -> sendChatAction($params);
@@ -50,6 +50,38 @@ switch ($text) {
       
       $response   = $client -> sendMessage(array('chat_id' => $chatid, 'text' => $message, 'reply_to_message_id' => $messageid));
       break;
+
+
+      case 'اخبار':
+      case '/akhbar':
+      case '/akhbar@BeheshtiNotifierBot':
+        $params   = array('chat_id' => $chatid, 'action' => 'typing');
+        $response   = $client -> sendChatAction($params);
+        $news_page =HtmlDomParser::file_get_html( "http://p-karaj.tvu.ac.ir/" );
+        $elems = $news_page->find(".full-list article header a ");    
+        $link = $elems[0]->href;
+        $fixLink = str_replace('./','/',$link);
+        $behe = "http://p-karaj.tvu.ac.ir";
+        $url = $behe.$fixLink;
+        $dom =HtmlDomParser::file_get_html( $url );
+        $elems = $dom->find("#content article div",0);
+        $message   =$elems->plaintext;
+        $response   = $client -> sendMessage(array('chat_id' => $chatid, 'text' => $message, 'reply_to_message_id' => $messageid));
+    break;
+
+
+    case 'کلاس جبرانی':
+    case '/jobrani':
+    case '/jobrani@BeheshtiNotifierBot':
+
+      $params  = array('chat_id' => $chatid, 'action' => 'typing');
+      $response   = $client -> sendChatAction($params);
+      $news_page =HtmlDomParser::file_get_html( "http://p-karaj.tvu.ac.ir/" );
+      $elems = $news_page->find("#simple-list_12031",0);
+      $message   =$elems->plaintext;
+      $response   = $client -> sendMessage(array('chat_id' => $chatid, 'text' => $message, 'reply_to_message_id' => $messageid));
+
+    break;
 
   default:
          $response = $client->sendMessage([
