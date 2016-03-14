@@ -26,7 +26,7 @@ $showKeyboard->keyboard = [
     ['اخبار', 'تعطیلی کلاس ها'],
     [ 'کلاس جبرانی']
 ];
-$showKeyboard->one_time_keyboard = false;
+$showKeyboard->one_time_keyboard = true;
 
                         $response = $client->sendMessage([
                             'chat_id' => $senderid,
