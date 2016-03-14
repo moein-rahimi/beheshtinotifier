@@ -22,22 +22,23 @@ $user =  $data['message']['from']['first_name'];
 
 $zaman 		= $data['message']['date'];
 
-$showKeyboard = new Zelenin\Telegram\Bot\Type\ReplyKeyboardMarkup();
+
+                        if ($text == '/start') {
+                          $showKeyboard = new Zelenin\Telegram\Bot\Type\ReplyKeyboardMarkup();
 $showKeyboard->keyboard = [
     ['اخبار', 'تعطیلی کلاس ها'],
     [ 'کلاس جبرانی']
 ];
 $showKeyboard->one_time_keyboard = true;
-                          $x='1';
-                          $y= '0';
-                           while ($x > $y) {
-                              $response = $client->sendMessage([
+                            $response = $client->sendMessage([
 
                               'chat_id' => $chatid,
                               'text' => 'سلام',
                               'reply_markup' => $showKeyboard
-                           }
+                           
                               
+                        }
+                            
                           
                         ]);  
                             
