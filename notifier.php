@@ -90,20 +90,12 @@ switch ($text) {
 }
 
 
+    require 'vendor/postgresql/PgSQL.php'
+    $db = new mod_pgsql();
+    $db->connect('ec2-54-225-199-245.compute-1.amazonaws.com
+', '5432', 'd769q6f0c1lg74', 'labzmifitskstd', 'DVFWOMHcjIZ12ysuKfAjq2emik');
 
-
-function akhabr()
-{
-  $params   = array('chat_id' => $chatid, 'action' => 'typing');
-      $response   = $client -> sendChatAction($params);
-    $news_page =HtmlDomParser::file_get_html( "http://p-karaj.tvu.ac.ir/" );
-
-            $elems = $news_page->find("#simple-list_11643 ",0);
- 
-   $message   =$elems->plaintext;
-      
-      $response   = $client -> sendMessage(array('chat_id' => $chatid, 'text' => $message, 'reply_to_message_id' => $messageid));
-}
+return $db;  
 
 
 
