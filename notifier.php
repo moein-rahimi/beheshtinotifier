@@ -21,6 +21,7 @@ $senderid 	= $data['message']['from']['id'];
 $user =  $data['message']['from']['first_name'];
 
 $zaman 		= $data['message']['date'];
+
 $showKeyboard = new Zelenin\Telegram\Bot\Type\ReplyKeyboardMarkup();
 $showKeyboard->keyboard = [
     ['اخبار', 'تعطیلی کلاس ها'],
@@ -30,6 +31,7 @@ $showKeyboard->one_time_keyboard = false;
 
                         $response = $client->sendMessage([
                             'chat_id' => $chatid,
+                            'text' => '',
                             'reply_markup' => $showKeyboard,
                             'disable_web_page_preview' => true
                         ]);  
