@@ -74,12 +74,12 @@ switch ($text) {
     case '/jobrani':
     case '/jobrani@BeheshtiNotifierBot':
 
-      $params  = array('chat_id' => $chatid, 'action' => 'typing');
-      $response   = $client -> sendChatAction($params);
-      $news_page =HtmlDomParser::file_get_html( "http://p-karaj.tvu.ac.ir/" );
-      $elems = $news_page->find("#simple-list_12031",0);
-      $message   =$elems->plaintext;
-      $response   = $client -> sendMessage(array('chat_id' => $chatid, 'text' => $message, 'reply_to_message_id' => $messageid));
+      // $params  = array('chat_id' => $chatid, 'action' => 'typing');
+      // $response   = $client -> sendChatAction($params);
+      // $news_page =HtmlDomParser::file_get_html( "http://p-karaj.tvu.ac.ir/" );
+      // $elems = $news_page->find("#simple-list_12031",0);
+      // $message   =$elems->plaintext;
+      $response   = $client -> sendMessage(array('chat_id' => $chatid, 'text' => 'این بخش غیر فعال است', 'reply_to_message_id' => $messageid));
 
     break;
 
