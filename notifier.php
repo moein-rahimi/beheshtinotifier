@@ -32,7 +32,7 @@ $showKeyboard->one_time_keyboard = true;
                             if ($chatid) {
                                $response = $client->sendMessage([
                             'chat_id' => $chatid,
-                            'text' => '',
+                            'text' => 'سلام',
                             'reply_markup' => $showKeyboard
                           
                         ]);  
