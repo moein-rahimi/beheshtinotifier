@@ -21,15 +21,15 @@ $senderid 	= $data['message']['from']['id'];
 $user =  $data['message']['from']['first_name'];
 
 $zaman 		= $data['message']['date'];
-
-
-                        if ($text == '/start') {
-                          $showKeyboard = new Zelenin\Telegram\Bot\Type\ReplyKeyboardMarkup();
+ $showKeyboard = new Zelenin\Telegram\Bot\Type\ReplyKeyboardMarkup();
 $showKeyboard->keyboard = [
     ['اخبار', 'تعطیلی کلاس ها'],
     [ 'کلاس جبرانی']
 ];
-$showKeyboard->one_time_keyboard = true;
+$showKeyboard->one_time_keyboard = false;
+
+                        if ($text == '/start') {
+
                             $response = $client->sendMessage([
 
                               'chat_id' => $chatid,
