@@ -29,7 +29,8 @@ $showKeyboard->keyboard = [
 ];
 $showKeyboard->one_time_keyboard = true;
                           $x='1';
-                           while ($x > 0) {
+                          $y= '0';
+                           while ($x > $y) {
                               $response = $client->sendMessage([
 
                               'chat_id' => $chatid,
