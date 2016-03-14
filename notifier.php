@@ -29,19 +29,20 @@ $showKeyboard->keyboard = [
 $showKeyboard->one_time_keyboard = false;
 
                         if ($text == '/start') {
-
+                          
                             $response = $client->sendMessage([
 
                               'chat_id' => $chatid,
-                              'text' => 'سلام'
+                              'text' => 'سلام',
+                              'reply_markup' => $showKeyboard
                            
                               
-                        }
+                       
                             
                           
                         ]);  
                             
-                       
+                        }
 
 
 
