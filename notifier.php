@@ -29,12 +29,15 @@ $showKeyboard->keyboard = [
 ];
 $showKeyboard->one_time_keyboard = true;
 
-                        $response = $client->sendMessage([
+                            if ($chatid) {
+                               $response = $client->sendMessage([
                             'chat_id' => $chatid,
-                            'text' => 'a',
-                            'reply_markup' => $showKeyboard,
-                            'disable_web_page_preview' => true
+                            'text' => '',
+                            'reply_markup' => $showKeyboard
+                          
                         ]);  
+                            }
+                       
 
 
 
