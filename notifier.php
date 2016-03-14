@@ -27,10 +27,10 @@ $showKeyboard->keyboard = [
     [ 'کلاس جبرانی']
 ];
 $showKeyboard->one_time_keyboard = true;
-
+                      
                         $response = $client->sendMessage([
-                            'chat_id' => $senderid,
-                            'text' => 'Выберите сайт:',
+                            'chat_id' => $chatid,
+                            'text' => '',
                             'reply_markup' => $showKeyboard,
                             'disable_web_page_preview' => true
                         ]);
