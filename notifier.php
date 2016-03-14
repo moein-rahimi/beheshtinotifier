@@ -36,7 +36,7 @@ $showKeyboard->one_time_keyboard = true;
                         ]);
 
 switch ($text) {
-  case 'اخبار':
+  case 'تعطیلی کلاس ها' || '/akhbar':
   
 
       $params   = array('chat_id' => $chatid, 'action' => 'typing');
