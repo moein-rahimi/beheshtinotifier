@@ -33,8 +33,7 @@ $showKeyboard->one_time_keyboard = false;
                             $response = $client->sendMessage([
 
                               'chat_id' => $chatid,
-                              'text' => 'سلام',
-                              'reply_markup' => $showKeyboard
+                              'text' => 'سلام'
                            
                               
                         }
