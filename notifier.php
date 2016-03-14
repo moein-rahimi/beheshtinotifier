@@ -4,7 +4,7 @@
 require 'vendor/autoload.php';
 use Sunra\PhpSimple\HtmlDomParser;
 	
-$token = "153172554:AAGrcXguYssXQAwsM2M-YIvBL2RJS1fdgrk" ;
+$token = "153172554:AAGrcXguYssXQAwsM2M-YIvBL2RJS1fdgrk"; //I know !
 
 $client = new Zelenin\Telegram\Bot\Api($token);
 
@@ -28,15 +28,18 @@ $showKeyboard->keyboard = [
     [ 'کلاس جبرانی']
 ];
 $showKeyboard->one_time_keyboard = true;
+                          $x='1';
+                           while ($x > 0) {
+                              $response = $client->sendMessage([
 
-                            if ($chatid) {
-                               $response = $client->sendMessage([
-                            'chat_id' => $chatid,
-                            'text' => 'سلام',
-                            'reply_markup' => $showKeyboard
+                              'chat_id' => $chatid,
+                              'text' => 'سلام',
+                              'reply_markup' => $showKeyboard
+                           }
+                              
                           
                         ]);  
-                            }
+                            
                        
 
 
