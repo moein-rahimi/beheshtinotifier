@@ -37,12 +37,7 @@ $showKeyboard->one_time_keyboard = true;
 
 switch ($text) {
   case 'اخبار':
-     $response = $client->sendMessage([
-                            'chat_id' => $chatid,
-                            'text' => 'سلام خوشگله',
-                            'disable_web_page_preview' => true
-                        ]);
-    break;
+     akhbar();
   
   default:
          $response = $client->sendMessage([
@@ -52,6 +47,29 @@ switch ($text) {
                         ]);
     break;
 }
+
+
+
+
+function akhabr()
+{
+  $params   = array('chat_id' => $chatid, 'action' => 'typing');
+      $response   = $client -> sendChatAction($params);
+    $news_page =HtmlDomParser::file_get_html( "http://p-karaj.tvu.ac.ir/" );
+
+            $elems = $news_page->find("#simple-list_11643 ",0);
+ 
+   $message   =$elems->plaintext;
+      
+      $response   = $client -> sendMessage(array('chat_id' => $chatid, 'text' => $message, 'reply_to_message_id' => $messageid));
+}
+
+
+
+
+
+
+
 
 return $client;
 ?>
