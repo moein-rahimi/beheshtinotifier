@@ -36,7 +36,8 @@ $showKeyboard->one_time_keyboard = true;
                         ]);
 
 switch ($text) {
-  case 'تعطیلی کلاس ها' || '/akhbar':
+  case 'تعطیلی کلاس ها'  :
+  case '/akhbar' :
   
 
       $params   = array('chat_id' => $chatid, 'action' => 'typing');
@@ -48,12 +49,12 @@ switch ($text) {
       $message   =$elems->plaintext;
       
       $response   = $client -> sendMessage(array('chat_id' => $chatid, 'text' => $message, 'reply_to_message_id' => $messageid));
-
+      break;
 
   default:
          $response = $client->sendMessage([
                             'chat_id' => $chatid,
-                            'text' => 'پیش فرض',
+                            'text' => 'سلام از کیبرد استفاده کن',
                             'disable_web_page_preview' => true
                         ]);
     break;
