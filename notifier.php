@@ -18,6 +18,8 @@ $text 		= $data['message']['text'];
 $messageid 	= $data['message']['message_id'];
 $updateid 	= $data['update_id'];
 $senderid 	= $data['message']['from']['id'];
+$user = $senderid   = $data['message']['from']['first_name'];
+
 $zaman 		= $data['message']['date'];
 
 $showKeyboard = new Zelenin\Telegram\Bot\Type\ReplyKeyboardMarkup();
@@ -29,7 +31,7 @@ $showKeyboard->one_time_keyboard = false;
 
                         $response = $client->sendMessage([
                             'chat_id' => $chatid,
-                            'text' => 'سلام'.$client->first_name,
+                            'text' => 'سلام'.$user,
                             'reply_markup' => $showKeyboard,
                             'disable_web_page_preview' => true
                         ]);  
