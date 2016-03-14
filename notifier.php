@@ -95,7 +95,7 @@ switch ($text) {
     $db->connect('ec2-54-225-199-245.compute-1.amazonaws.com
 ', '5432', 'd769q6f0c1lg74', 'labzmifitskstd', 'DVFWOMHcjIZ12ysuKfAjq2emik');
 
-return $db;  
+ var_dump($db);  
 
 
 
@@ -104,5 +104,5 @@ return $db;
 
 
 
-return $client;
+//return $client;
 ?>
