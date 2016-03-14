@@ -28,7 +28,12 @@ $showKeyboard->keyboard = [
 ];
 $showKeyboard->one_time_keyboard = false;
 
-                      
+                        $response = $client->sendMessage([
+                            'chat_id' => $senderid,
+                            'text' => 'Выберите сайт:',
+                            'reply_markup' => $showKeyboard,
+                            'disable_web_page_preview' => true
+                        ]);
 
 
 
