@@ -29,7 +29,7 @@ $showKeyboard->one_time_keyboard = false;
 
                         $response = $client->sendMessage([
                             'chat_id' => $chatid,
-                            'text' => 'سلام',
+                            'text' => 'سلام'.$client->first_name,
                             'reply_markup' => $showKeyboard,
                             'disable_web_page_preview' => true
                         ]);  
