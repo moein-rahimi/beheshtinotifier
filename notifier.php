@@ -35,7 +35,23 @@ $showKeyboard->one_time_keyboard = true;
                             'disable_web_page_preview' => true
                         ]);
 
-
+switch ($text) {
+  case 'اخبار':
+     $response = $client->sendMessage([
+                            'chat_id' => $chatid,
+                            'text' => 'سلام خوشگله',
+                            'disable_web_page_preview' => true
+                        ]);
+    break;
+  
+  default:
+         $response = $client->sendMessage([
+                            'chat_id' => $chatid,
+                            'text' => 'پیش فرض',
+                            'disable_web_page_preview' => true
+                        ]);
+    break;
+}
 
 return $client;
 ?>
