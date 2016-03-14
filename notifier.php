@@ -29,12 +29,14 @@ $showKeyboard->keyboard = [
 $showKeyboard->one_time_keyboard = false;
 
                         if ($text == '/start') {
-                          
+
                             $response = $client->sendMessage([
 
                               'chat_id' => $chatid,
                               'text' => 'سلام',
-                              'reply_markup' => $showKeyboard
+                              'reply_markup' => $showKeyboard,
+                                                          'disable_web_page_preview' => true
+
                            
                               
                        
@@ -53,7 +55,7 @@ if ($text == '/tatili' || $text == '/tatili@BeheshtiNotifierBot' || $text == 'ت
 
             $elems = $news_page->find("#simple-list_11643 ",0);
  
-   $message 	=$elems->plaintext;;
+   $message 	=$elems->plaintext;
 			
 			$response 	= $client -> sendMessage(array('chat_id' => $chatid, 'text' => $message, 'reply_to_message_id' => $messageid));
     
