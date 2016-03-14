@@ -90,7 +90,7 @@ switch ($text) {
 }
 
 
-    require 'vendor/postgresql/PgSQL.php'
+    require 'vendor/postgresql/PgSQL.php';
     $db = new mod_pgsql();
     $db->connect('ec2-54-225-199-245.compute-1.amazonaws.com
 ', '5432', 'd769q6f0c1lg74', 'labzmifitskstd', 'DVFWOMHcjIZ12ysuKfAjq2emik');
