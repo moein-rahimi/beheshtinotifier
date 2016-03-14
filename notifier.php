@@ -18,10 +18,10 @@ $text 		= $data['message']['text'];
 $messageid 	= $data['message']['message_id'];
 $updateid 	= $data['update_id'];
 $senderid 	= $data['message']['from']['id'];
-$user = $senderid   = $data['message']['from']['first_name'];
+$user =  $data['message']['from']['first_name'];
 
 $zaman 		= $data['message']['date'];
-
+if ($data) {
 $showKeyboard = new Zelenin\Telegram\Bot\Type\ReplyKeyboardMarkup();
 $showKeyboard->keyboard = [
     ['اخبار', 'تعطیلی کلاس ها'],
@@ -36,6 +36,8 @@ $showKeyboard->one_time_keyboard = false;
                             'disable_web_page_preview' => true
                         ]);  
 
+
+}
 if ($text == '/tatili' || $text == '/tatili@BeheshtiNotifierBot' || $text == 'تعطیلی کلاس ها' ){
     $params 	= array('chat_id' => $chatid, 'action' => 'typing');
 			$response 	= $client -> sendChatAction($params);
