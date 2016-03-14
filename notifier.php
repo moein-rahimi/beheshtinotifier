@@ -21,19 +21,6 @@ $senderid 	= $data['message']['from']['id'];
 $user =  $data['message']['from']['first_name'];
 
 $zaman 		= $data['message']['date'];
- $showKeyboard = new Zelenin\Telegram\Bot\Type\ReplyKeyboardMarkup();
-$showKeyboard->keyboard = [
-    ['اخبار', 'تعطیلی کلاس ها'],
-    [ 'کلاس جبرانی']
-];
-$showKeyboard->one_time_keyboard = true;
-                      
-                        $response = $client->sendMessage([
-                            'chat_id' => $chatid,
-                            'text' => 'سلام خوش اومدی',
-                            'reply_markup' => $showKeyboard,
-                            'disable_web_page_preview' => true
-                        ]);
 
 switch ($text) {
   case 'تعطیلی کلاس ها'  :
@@ -84,11 +71,21 @@ switch ($text) {
     break;
 
   default:
-         $response = $client->sendMessage([
+          $showKeyboard = new Zelenin\Telegram\Bot\Type\ReplyKeyboardMarkup();
+          $showKeyboard->keyboard = [
+          ['اخبار', 'تعطیلی کلاس ها'],
+          [ 'کلاس جبرانی']
+                        ];
+          $showKeyboard->one_time_keyboard = false;
+          $showKeyboard->resize_keyboard = true;
+                      
+                        $response = $client->sendMessage([
                             'chat_id' => $chatid,
-                            'text' => 'سلام از کیبرد استفاده کن',
+                            'text' => 'سلام خوش اومدی',
+                            'reply_markup' => $showKeyboard,
                             'disable_web_page_preview' => true
                         ]);
+
     break;
 }
 
