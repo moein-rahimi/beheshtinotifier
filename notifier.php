@@ -46,7 +46,7 @@ switch ($text) {
     $stmt->bindParam(':chatid', $senderid, PDO::PARAM_INT);
 
         $stmt->execute();
-  
+  print_r($stmt);
 
 
       break;
