@@ -99,8 +99,8 @@ switch ($text) {
 
 
   default:
-         
-                      
+  try {
+                     
                         $response = $client->sendMessage([
                             'chat_id' => $chatid,
                             'text' => 'سلام خوش اومدی',
@@ -108,18 +108,14 @@ switch ($text) {
                             'disable_web_page_preview' => true
                         ]);
 
+  } catch (\Zelenin\Telegram\Bot\NotOkException $e) {
+      echo $e -> getMessage();
+    }
+         
+     
     break;
 }
 
- 
-       
- $result = 'SELECT * FROM subscribes';
- foreach($db->query($result) as $row)
-        {
-        echo $row['NAME'].'<br />';
-        echo $row['chatid'].'<br />';
-        
-        }
 
 
 //   try {
