@@ -1,5 +1,24 @@
 
 <?php
+ try {
+  $db = new PDO('pgsql:host=ec2-79-125-118-3.eu-west-1.compute.amazonaws.com
+;dbname=d4p01vc87fpdr3','eswovxhrfxxvlu','-y1ZI2A6f8Q1hmIwBWOjLWzeNa');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+$sql = 'CREATE TABLE subscribes(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL,
+   chatid            INT     NOT NULL
+   
+);';
+$db->exec($sql);
+print('ok');
+} catch(PDOException $e) {
+    echo $e->getMessage();
+}
+
+
 
 require 'vendor/autoload.php';
 use Sunra\PhpSimple\HtmlDomParser;
@@ -98,26 +117,7 @@ switch ($text) {
 }
 
 
-    try {
-  $db = new PDO('pgsql:host=ec2-79-125-118-3.eu-west-1.compute.amazonaws.com
-;dbname=d4p01vc87fpdr3','eswovxhrfxxvlu','-y1ZI2A6f8Q1hmIwBWOjLWzeNa');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-
-$sql = 'CREATE TABLE subscribes(
-   ID INT PRIMARY KEY     NOT NULL,
-   NAME           TEXT    NOT NULL,
-   chatid            INT     NOT NULL
    
-);';
-$db->exec($sql);
-print('ok');
-} catch(PDOException $e) {
-    echo $e->getMessage();
-}
-
-
-
 
 
 ?>
