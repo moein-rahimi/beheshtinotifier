@@ -45,8 +45,11 @@ switch ($text) {
         $stmt->bindParam(':NAME',$user , PDO::PARAM_STR);
     $stmt->bindParam(':chatid', $senderid, PDO::PARAM_INT);
 
-        $stmt->execute();
-  print_r($stmt);
+        if($stmt->execute())
+        {
+         $response   = $client -> sendMessage(array('chat_id' => $chatid, 'text' => $senderid.$user, 'reply_to_message_id' => $messageid));
+
+        }
 
 
       break;
