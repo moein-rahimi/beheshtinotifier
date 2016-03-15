@@ -113,32 +113,10 @@ switch ($text) {
 }
 
   /*** loop of the results ***/
-    
+          
            $db = new PDO('pgsql:host=ec2-79-125-118-3.eu-west-1.compute.amazonaws.com
  ;dbname=d4p01vc87fpdr3','eswovxhrfxxvlu','-y1ZI2A6f8Q1hmIwBWOjLWzeNa');
-
-
-  try {
-  
-
-$sql = 'CREATE TABLE subscribess(
-   ID SERIAL PRIMARY KEY     NOT NULL,
-   NAME           TEXT    NOT NULL,
-   chatid            INT     NOT NULL
-   
-);';
-$db->exec($sql);
-
-}catch(PDOException $e) {
-      echo $e->getMessage();
-
-}
-
-
-    // $db = new PDO('pgsql:host=localhost
-    //   ;dbname=test','postgres','moe2012@');
-    // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $db->prepare("INSERT INTO subscribes(NAME, chatid) VALUES (:NAME, :chatid)");
+ $stmt = $db->prepare("INSERT INTO subscribess(NAME, chatid) VALUES (:NAME, :chatid)");
         $stmt->bindParam(':NAME',$user , PDO::PARAM_STR);
     $stmt->bindParam(':chatid', $senderid, PDO::PARAM_INT);
 
@@ -146,9 +124,31 @@ $db->exec($sql);
  $result = 'SELECT * FROM subscribes';
  foreach($db->query($result) as $row)
         {
-        echo $row['name'].'<br />';
+        echo $row['NAME'].'<br />';
         echo $row['chatid'].'<br />';
         
         }
 
+
+//   try {
+  
+
+// $sql = 'CREATE TABLE subscribess(
+//    ID SERIAL PRIMARY KEY     NOT NULL,
+//    NAME           TEXT    NOT NULL,
+//    chatid            INT     NOT NULL
+   
+// );';
+// $db->exec($sql);
+
+// }catch(PDOException $e) {
+//       echo $e->getMessage();
+
+// }
+
+
+    // $db = new PDO('pgsql:host=localhost
+    //   ;dbname=test','postgres','moe2012@');
+    // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+   
 ?>
