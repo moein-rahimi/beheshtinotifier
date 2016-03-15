@@ -118,7 +118,7 @@ switch ($text) {
                             'disable_web_page_preview' => true
                         ]);
 
-    break;
+    
 }
 
  
