@@ -8,7 +8,13 @@ $baseDir = dirname($vendorDir);
 return array(
     'Zelenin\\Telegram\\Bot\\' => array($vendorDir . '/zelenin/telegram-bot-api'),
     'Telegram\\Bot\\' => array($vendorDir . '/irazasyed/telegram-bot-sdk/src'),
+    'Symfony\\Component\\Routing\\' => array($vendorDir . '/symfony/routing'),
+    'Symfony\\Component\\HttpKernel\\' => array($vendorDir . '/symfony/http-kernel'),
+    'Symfony\\Component\\HttpFoundation\\' => array($vendorDir . '/symfony/http-foundation'),
+    'Symfony\\Component\\EventDispatcher\\' => array($vendorDir . '/symfony/event-dispatcher'),
+    'Symfony\\Component\\Debug\\' => array($vendorDir . '/symfony/debug'),
     'Stringy\\' => array($vendorDir . '/danielstjules/stringy/src'),
+    'Silex\\' => array($vendorDir . '/silex/silex/src/Silex'),
     'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
     'Illuminate\\Support\\' => array($vendorDir . '/illuminate/support'),
     'Illuminate\\Contracts\\' => array($vendorDir . '/illuminate/contracts'),

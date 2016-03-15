@@ -1,6 +1,33 @@
 
 
 <?php
+    /// $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+try {
+  $db = new PDO('pgsql:host=ec2-79-125-118-3.eu-west-1.compute.amazonaws.com
+;dbname=d4p01vc87fpdr3','eswovxhrfxxvlu','-y1ZI2A6f8Q1hmIwBWOjLWzeNa');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+$sql = 'CREATE TABLE bitch(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL,
+   AGE            INT     NOT NULL,
+   ADDRESS        CHAR(50),
+   SALARY         REAL
+);';
+$db->exec($sql);
+print('ok');
+} catch(PDOException $e) {
+    echo $e->getMessage();//Remove or change message in production code
+}
+
+
+
+
+
+   
+
+
 require 'vendor/autoload.php';
 use Sunra\PhpSimple\HtmlDomParser;
 	
@@ -90,16 +117,7 @@ switch ($text) {
 }
 
 
-    require 'vendor/postgresql/PgSQL.php';
-    $db = new mod_pgsql();
-    $db->connect('ec2-54-225-199-245.compute-1.amazonaws.com
-', '5432', 'd769q6f0c1lg74', 'labzmifitskstd', 'DVFWOMHcjIZ12ysuKfAjq2emik');
-
- var_dump($db);  
-
-
-
-
+    
 
 
 

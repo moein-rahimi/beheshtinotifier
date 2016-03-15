@@ -3,7 +3,8 @@
       "sunra/php-simple-html-dom-parser": "v1.5.0",
       
         "irazasyed/telegram-bot-sdk": "^1.0",
-        "zelenin/telegram-bot-api": "~0.0"
+        "zelenin/telegram-bot-api": "~0.0",
+        "herrera-io/silex-pdo": "^1.2"
     
     }
 }
