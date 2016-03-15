@@ -107,7 +107,7 @@ switch ($text) {
 $sql = 'CREATE TABLE subscribes(
    ID INT PRIMARY KEY     NOT NULL,
    NAME           TEXT    NOT NULL,
-   chatid            INT     NOT NULL,
+   chatid            INT     NOT NULL
    
 );';
 $db->exec($sql);
