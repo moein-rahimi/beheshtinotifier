@@ -1,22 +1,6 @@
 
 <?php
-//  try {
-//   $db = new PDO('pgsql:host=ec2-79-125-118-3.eu-west-1.compute.amazonaws.com
-// ;dbname=d4p01vc87fpdr3','eswovxhrfxxvlu','-y1ZI2A6f8Q1hmIwBWOjLWzeNa');
-//     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-
-// $sql = 'CREATE TABLE subscribes(
-//    ID INT PRIMARY KEY     NOT NULL,
-//    NAME           TEXT    NOT NULL,
-//    chatid            INT     NOT NULL
-   
-// );';
-// $db->exec($sql);
-// print('ok');
-// } catch(PDOException $e) {
-//     echo $e->getMessage();
-// }
 
 
 
@@ -97,14 +81,10 @@ switch ($text) {
 
 
 
-         $db = new PDO('pgsql:host=ec2-79-125-118-3.eu-west-1.compute.amazonaws.com
-;dbname=d4p01vc87fpdr3','eswovxhrfxxvlu','-y1ZI2A6f8Q1hmIwBWOjLWzeNa');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $count = $db->exec("INSERT INTO subscribes(NAME, chatid) VALUES ('$user', '$senderid')");
-
-
-
-
+//          $db = new PDO('pgsql:host=ec2-79-125-118-3.eu-west-1.compute.amazonaws.com
+// ;dbname=d4p01vc87fpdr3','eswovxhrfxxvlu','-y1ZI2A6f8Q1hmIwBWOjLWzeNa');
+//     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//     $stmt = $db->prepare("INSERT INTO subscribes(NAME, chatid) VALUES (:NAME, :chatid)");
 
 
       $response   = $client -> sendMessage(array('chat_id' => $chatid, 'text' => 'شما عضو خبرنامه شدید از اینک آخرین اخبار به شما ارسال میشود', 'reply_to_message_id' => $messageid));
@@ -133,6 +113,22 @@ echo $count;
    foreach($db->query('SELECT * FROM subscribes') as $row) {
     echo $row['chatid'] . ' ' . $row['NAME'];
 }
+//  try {
+//   $db = new PDO('pgsql:host=ec2-79-125-118-3.eu-west-1.compute.amazonaws.com
+// ;dbname=d4p01vc87fpdr3','eswovxhrfxxvlu','-y1ZI2A6f8Q1hmIwBWOjLWzeNa');
+//     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+
+// $sql = 'CREATE TABLE subscribes(
+//    ID INT PRIMARY KEY     NOT NULL,
+//    NAME           TEXT    NOT NULL,
+//    chatid            INT     NOT NULL
+   
+// );';
+// $db->exec($sql);
+// print('ok');
+// } catch(PDOException $e) {
+//     echo $e->getMessage();
+// }
 
 ?>
