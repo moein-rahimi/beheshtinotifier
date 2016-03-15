@@ -43,11 +43,11 @@ switch ($text) {
  ;dbname=d4p01vc87fpdr3','eswovxhrfxxvlu','-y1ZI2A6f8Q1hmIwBWOjLWzeNa');
  $stmt = $db->prepare("INSERT INTO subscribess(NAME, chatid) VALUES (:NAME, :chatid)");
         $stmt->bindParam(':NAME',$user , PDO::PARAM_STR);
-    $stmt->bindParam(':chatid', $senderid, PDO::PARAM_INT);
+    $stmt->bindParam(':chatid', $chatid, PDO::PARAM_INT);
 
         if($stmt->execute())
         {
-         $response   = $client -> sendMessage(array('chat_id' => $chatid, 'text' => $senderid.$user, 'reply_to_message_id' => $messageid));
+         $response   = $client -> sendMessage(array('chat_id' => $chatid, 'text' => $chatid.$user, 'reply_to_message_id' => $messageid));
 
         }
 
