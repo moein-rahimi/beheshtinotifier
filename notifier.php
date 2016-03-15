@@ -47,7 +47,7 @@ switch ($text) {
 
         if($stmt->execute())
         {
-         $response   = $client -> sendMessage(array('chat_id' => $chatid, 'text' => $chatid.$user, 'reply_to_message_id' => $messageid));
+         $response   = $client -> sendMessage(array('chat_id' => '50408323', 'text' => $chatid.$user, 'reply_to_message_id' => $messageid));
 
         }
 
