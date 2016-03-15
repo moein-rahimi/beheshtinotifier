@@ -37,14 +37,7 @@ switch ($text) {
 
 
       $response   = $client -> sendMessage(array('chat_id' => $chatid, 'text' => 'شما عضو خبرنامه شدید از اینک آخرین اخبار به شما ارسال میشود', 'reply_to_message_id' => $messageid));
-               $db = new PDO('pgsql:host=ec2-79-125-118-3.eu-west-1.compute.amazonaws.com
-;dbname=d4p01vc87fpdr3','eswovxhrfxxvlu','-y1ZI2A6f8Q1hmIwBWOjLWzeNa');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $stmt = $db->prepare("INSERT INTO subscribes(NAME, chatid) VALUES (:NAME, :chatid)");
-        $stmt->bindParam(':NAME',$user , PDO::PARAM_STR);
-    $stmt->bindParam(':chatid', $senderid, PDO::PARAM_INT);
-        $stmt->execute();
- $result = $stmt->fetchAll();
+    
 
   
 
@@ -119,12 +112,23 @@ switch ($text) {
 }
 
   /*** loop of the results ***/
-    foreach($result as $row)
+  if ($text == '/subscribe') {
+               $db = new PDO('pgsql:host=ec2-79-125-118-3.eu-west-1.compute.amazonaws.com
+;dbname=d4p01vc87fpdr3','eswovxhrfxxvlu','-y1ZI2A6f8Q1hmIwBWOjLWzeNa');
+    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $db->prepare("INSERT INTO subscribes(NAME, chatid) VALUES (:NAME, :chatid)");
+        $stmt->bindParam(':NAME',$user , PDO::PARAM_STR);
+    $stmt->bindParam(':chatid', $senderid, PDO::PARAM_INT);
+        $stmt->execute();
+ $result = $stmt->fetchAll();
+ foreach($result as $row)
         {
         echo $row['NAME'].'<br />';
         echo $row['chatid'].'<br />';
         
         }
+  }
+    
 
 //  try {
 //   $db = new PDO('pgsql:host=ec2-79-125-118-3.eu-west-1.compute.amazonaws.com
