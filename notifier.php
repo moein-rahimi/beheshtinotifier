@@ -41,6 +41,13 @@ switch ($text) {
 ;dbname=d4p01vc87fpdr3','eswovxhrfxxvlu','-y1ZI2A6f8Q1hmIwBWOjLWzeNa');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $stmt = $db->prepare("INSERT INTO subscribes(NAME, chatid) VALUES (:NAME, :chatid)");
+        $stmt->bindParam(':NAME',$user , PDO::PARAM_STR);
+    $stmt->bindParam(':chatid', $senderid, PDO::PARAM_INT);
+        $stmt->execute();
+ $result = $stmt->fetchAll();
+
+  
+
 
       break;
   case 'تعطیلی کلاس ها'  :
@@ -111,6 +118,13 @@ switch ($text) {
     break;
 }
 
+  /*** loop of the results ***/
+    foreach($result as $row)
+        {
+        echo $row['NAME'].'<br />';
+        echo $row['chatid'].'<br />';
+        
+        }
 
 //  try {
 //   $db = new PDO('pgsql:host=ec2-79-125-118-3.eu-west-1.compute.amazonaws.com
