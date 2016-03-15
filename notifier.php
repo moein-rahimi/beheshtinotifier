@@ -14,6 +14,13 @@ $senderid 	= $data['message']['from']['id'];
 $user =  $data['message']['from']['first_name'];
 
 $zaman 		= $data['message']['date'];
+ $showKeyboard = new Zelenin\Telegram\Bot\Type\ReplyKeyboardMarkup();
+          $showKeyboard->keyboard = [
+          ['اخبار', 'تعطیلی کلاس ها'],
+          [ 'کلاس جبرانی', 'اشتراک در خبرنامه']
+                        ];
+          $showKeyboard->one_time_keyboard = false;
+          $showKeyboard->resize_keyboard = true;
 
 switch ($text) {
  //      case 'اشتراک در خبرنامه':
@@ -92,13 +99,7 @@ switch ($text) {
 
 
   default:
-          $showKeyboard = new Zelenin\Telegram\Bot\Type\ReplyKeyboardMarkup();
-          $showKeyboard->keyboard = [
-          ['اخبار', 'تعطیلی کلاس ها'],
-          [ 'کلاس جبرانی', 'اشتراک در خبرنامه']
-                        ];
-          $showKeyboard->one_time_keyboard = false;
-          $showKeyboard->resize_keyboard = true;
+         
                       
                         $response = $client->sendMessage([
                             'chat_id' => $chatid,
