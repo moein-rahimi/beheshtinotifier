@@ -14,5 +14,5 @@
 
 ###To Do List
 - [x] Add Keyboard Markup for easier usage
-- [] Move the Project To LaravelSDK
+- [ ] Move the Project To LaravelSDK
 - [ ] Add Subscribe ability
