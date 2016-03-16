@@ -17,7 +17,7 @@ $zaman 		= $data['message']['date'];
  $showKeyboard = new Zelenin\Telegram\Bot\Type\ReplyKeyboardMarkup();
           $showKeyboard->keyboard = [
           ['اخبار', 'تعطیلی کلاس ها'],
-          [ 'کلاس جبرانی', 'اشتراک در خبرنامه']
+          [ 'کلاس جبرانی']
                         ];
           $showKeyboard->one_time_keyboard = false;
           $showKeyboard->resize_keyboard = true;
